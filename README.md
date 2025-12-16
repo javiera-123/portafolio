@@ -1,21 +1,32 @@
-# portafolio
+## **Predicción del Nivel de PIB utilizando Datos del Banco Mundial**
 
-# Análisis y Clasificación de la Prosperidad Global (PIB)
+El objetivo de este proyecto es predecir el nivel de PIB de distintos países a partir de indicadores económicos, sociales y demográficos obtenidos del Banco Mundial.
 
-## Objetivo del Proyecto
-El objetivo principal de este proyecto es construir un modelo de clasificación que permita predecir el nivel de Producto Interno Bruto (PIB) de diversos países. Para ello, se utilizan indicadores económicos, demográficos y sociales provenientes del Banco Mundial, transformando el problema inicial de regresión en un problema de clasificación de cinco niveles (Bajo, Medio-Bajo, Medio, Medio-Alto, Alto).
+El trabajo debe realizarse en tres etapas principales:
 
-## Metodología Estructurada
-El desarrollo se estructura en tres etapas secuenciales, asegurando una gestión de versiones clara a través de ramas dedicadas:
+- Análisis descriptivo e imputación de datos
 
-1.  **Etapa 1: Análisis y Preparación de Datos:** Se realiza un análisis exploratorio, se identifica la presencia de valores nulos y *outliers*, y se aplica una estrategia de imputación o eliminación de variables según sea necesario. Finalmente, se discretiza la variable objetivo (PIB).
-2.  **Etapa 2: Reducción de Dimensionalidad (PCA):** Debido a la alta correlación y el número de variables, se aplicará el Análisis de Componentes Principales para obtener un conjunto de características que expliquen entre el 70% y 90% de la varianza total de los datos.
-3.  **Etapa 3: Modelación de Clasificación:** Se implementarán y evaluarán algoritmos de clasificación utilizando las componentes principales obtenidas para predecir el nivel de PIB.
+- Reducción de dimensionalidad con PCA
 
-## Estructura del Repositorio
-* `main/`: Contiene los datos crudos iniciales del Banco Mundial (extraídos en la Etapa Previa).
-* `etapa-1`: Avances del análisis descriptivo e imputación.
-* `etapa-2`: Desarrollo del PCA y creación del nuevo *dataset* de componentes.
-* `etapa-3`: Implementación y evaluación de los modelos de clasificación.
+- Modelación mediante algoritmos de clasificación
 
-El historial de la rama `main` refleja la versión más actualizada y consolidada del proyecto después de cada unión (`merge`).
+### **Etapa 1: Análisis Descriptivo e Imputación de Datos**
+
+**Revisión general del dataset**
+
+- Identificar el número de países, años y variables disponibles.
+
+- Número total de observaciones
+
+- Porcentaje de datos faltantes por variable: En caso que la variable cuente con menos de un 15% de datos NA se recomienda imputar. En caso contrario, eliminar variable.
+
+- Identificación de outliers relevantes
+
+
+**Indicaciones**:
+
+- Generar una tabla de estadísticas descriptivas: media, mediana, desviación estándar, máximo, mínimo.
+
+- Mostrar la distribución del PIB (histograma o boxplot), ya que es la variable objetivo.
+
+- Mapa con la distribución del PIB
