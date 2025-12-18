@@ -1,39 +1,9 @@
-## **Predicción del Nivel de PIB utilizando Datos del Banco Mundial**
+Etapa Final: Implementación y Comparación de Modelos de Clasificación
 
-#### **Propósito del Proyecto**
-Este proyecto tiene como objetivo diseñar y evaluar un modelo de clasificación capaz de predecir el Nivel de Producto Interno Bruto (PIB) de diversas naciones. Utilizando indicadores macroeconómicos, demográficos y sociales provenientes de las bases de datos abiertas del Banco Mundial, el análisis busca identificar qué factores (salud, educación, infraestructura, etc.) tienen mayor peso en la categorización económica de un país.
+En esta etapa final del proyecto se procede a la implementación de modelos de clasificación, con el propósito de evaluar el efecto de la reducción de dimensionalidad sobre el desempeño predictivo y la estructura del problema. Las fases de proyecto son las siguientes:
 
-El enfoque principal es transformar datos crudos en inteligencia accionable, optimizando la complejidad del modelo mediante técnicas avanzadas de reducción de dimensionalidad.
+En primer lugar, se construyen dos modelos de clasificación utilizando el conjunto de datos original, es decir, considerando la totalidad de las variables explicativas sin aplicar técnicas de reducción de dimensionalidad. Esta aproximación permite establecer una línea base (baseline) para el análisis comparativo posterior.
+Posteriormente, se desarrollan los mismos modelos de clasificación empleando como variables de entrada las componentes principales obtenidas en la etapa de reducción de dimensionalidad mediante PCA. De esta forma, se evalúa si la representación reducida de los datos logra preservar información relevante para la tarea de clasificación.
+Ambos enfoques se implementan bajo condiciones metodológicas comparables, manteniendo criterios consistentes de partición de datos y métricas de evaluación. El desempeño de los modelos se analiza mediante indicadores adecuados al problema de clasificación, permitiendo contrastar los resultados obtenidos con datos originales y con datos reducidos.
 
-### **Estructura del Proyecto**
-El desarrollo se divide en tres fases críticas, gestionadas mediante un sistema de control de versiones robusto:
-
-1. Ingeniería de Datos y Análisis Exploratorio (EDA)
-
-- Extracción: Obtención de datos reales desde el World Bank API.
-
-- Limpieza: Tratamiento de valores nulos mediante criterios de umbral y técnicas de imputación por mediana.
-
-- Normalización: Estandarización de variables para asegurar la integridad estadística.
-
-2. Optimización de Dimensiones (PCA)
-- Aplicación de Análisis de Componentes Principales (PCA) para mitigar el fenómeno de la "maldición de la dimensionalidad".
-
-- Análisis de la varianza explicada para conservar entre el 70% y 90% de la información original, garantizando un modelo parsimonioso y eficiente.
-
-3. Modelado Predictivo
-- Implementación de algoritmos de clasificación para asignar niveles de PIB.
-
-- Evaluación de métricas de desempeño para validar la precisión de las predicciones.
-
-
-### **Flujo de Trabajo y Control de Versiones**
-Para garantizar la trazabilidad y el orden del proyecto, se ha implementado una estrategia de ramificación (branching):
-
-- `main`: Rama principal que consolida la versión estable y final del código.
-
-- `etapa-1`: Foco en la limpieza, imputación y análisis inicial de datos.
-
-- `etapa-2 `: Foco en la transformación matemática y reducción de variables (PCA).
-
-- `etapa-3`: Foco en el entrenamiento de modelos y resultados finales.
+Finalmente, se realiza un análisis comparativo de los resultados, discutiendo las ventajas y limitaciones de cada enfoque, así como el impacto del uso de PCA en términos de desempeño, interpretabilidad y complejidad del modelo. Esta etapa cierra el proyecto integrando los aprendizajes obtenidos a lo largo de las fases previas y fundamentando las decisiones analíticas adoptadas.
