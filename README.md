@@ -1,4 +1,4 @@
-Etapa Final: Implementación y Comparación de Modelos de Clasificación
+##Etapa Final: Implementación y Comparación de Modelos de Clasificación
 
 En esta etapa final del proyecto se procede a la implementación de modelos de clasificación, con el propósito de evaluar el efecto de la reducción de dimensionalidad sobre el desempeño predictivo y la estructura del problema. 
 
@@ -24,3 +24,31 @@ Para realizar las comparaciones, utilizamos las metricas `Accuracy` y `F1-Score`
 En el dataset original, kNN obtuvo un Accuracy de 0.4250. Este rendimiento moderado se debe a la "maldición de la dimensionalidad", ya que al tener tantas variables (67), el concepto de "distancia" se vuelve difuso, como mencionamos anteriormente este modelo es sensible a la escala y a la cantidad de variables.
 
 El Random Forest sufrió una caída similar en su desempeño (`de 0.72 a 0.30`) al cambiar a PCA. Esto sugiere que el algoritmo depende de las variables originales crudas para identificar los puntos de corte óptimos en sus árboles de decisión; al licuar la información en componentes abstractos, se pierden las fronteras de decisión locales que el modelo aprovecha.
+
+**Accuracy**
+
+- KNN: 0.425
+- KNN PCA: 0.25
+
+- Random Forest Original: 0.725
+- Random Forest PCA: 0.3
+
+**F1-Score**
+
+- KNN: 0.4141
+- KNN PCA: 0.2484
+
+- Random Forest Original: 0.7167
+- Random Forest PCA: 0.3256
+- 
+**Discusión de Resultados**
+
+En este proyecto, observamos que el uso de PCA tuvo efectos opuestos según el algoritmo:
+
+Con K-Nearest Neighbors el rendimiento del modelo decayó significativamente, pasando de un 0.425 a un 0.25 en accuracy. Esto sugiere que, al reducir el dataset a solo 5 componentes, se perdió la resolución espacial necesaria para que el algoritmo identifique correctamente la vecindad de los datos. En KNN, la distancia euclidiana es fundamental; al comprimir 38 variables en 5, las distancias entre países de diferentes categorías se volvieron ambiguas, provocando clasificaciones erróneas.
+
+Random Forest perdió su capacidad predictiva al pasar al espacio de 5 componentes, y esto se debe a que el algoritmo de Random Forest fundamenta su eficacia en la diversidad y la abundancia de datos. Al ser un modelo basado en la construcción de múltiples árboles de decisión, necesita un espectro amplio de variables para explorar diferentes combinaciones y detectar patrones complejos que no son visibles a simple vista. Al limitar el espacio a pocos componentes, se restringe la "visión" del modelo, obligándolo a generalizar en exceso y eliminando la riqueza informativa que le permite ser preciso.
+
+**Conclusión Metodológica**
+
+Para este dataset del Banco Mundial, la reducción de dimensionalidad mediante PCA no resultó en una mejora para los modelos probados. El algoritmo de KNN mostró ser altamente sensible a la pérdida de información dimensional, lo que invalida el uso de solo 5 componentes para este método. En conclusión, si se busca la máxima precisión posible en la clasificación del nivel de PIB, el Random Forest con el dataset original (67 variables) sigue siendo la mejor opción estratégica, ya que preserva la complejidad necesaria para capturar las disparidades económicas globales.
