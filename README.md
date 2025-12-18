@@ -1,5 +1,3 @@
-# portafolio
-
 ### **Etapa 2: Reducción de Dimensionalidad con PCA**
 
 El dataset contiene múltiples variables macroeconómicas, demográficas y sociales, por lo que se aplicará Análisis de Componentes Principales (`PCA`) con el objetivo de reducir la dimensionalidad y capturar los principales patrones subyacentes en los datos.
