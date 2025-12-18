@@ -25,6 +25,9 @@ En el dataset original, kNN obtuvo un Accuracy de 0.4250. Este rendimiento moder
 
 El Random Forest sufrió una caída similar en su desempeño (`de 0.72 a 0.30`) al cambiar a PCA. Esto sugiere que el algoritmo depende de las variables originales crudas para identificar los puntos de corte óptimos en sus árboles de decisión; al licuar la información en componentes abstractos, se pierden las fronteras de decisión locales que el modelo aprovecha.
 
+
+**Discusión de Resultados**
+
 **Accuracy**
 
 - KNN: 0.425
@@ -40,9 +43,8 @@ El Random Forest sufrió una caída similar en su desempeño (`de 0.72 a 0.30`) 
 
 - Random Forest Original: 0.7167
 - Random Forest PCA: 0.3256
-- 
-**Discusión de Resultados**
 
+- 
 En este proyecto, observamos que el uso de PCA tuvo efectos opuestos según el algoritmo:
 
 Con K-Nearest Neighbors el rendimiento del modelo decayó significativamente, pasando de un 0.425 a un 0.25 en accuracy. Esto sugiere que, al reducir el dataset a solo 5 componentes, se perdió la resolución espacial necesaria para que el algoritmo identifique correctamente la vecindad de los datos. En KNN, la distancia euclidiana es fundamental; al comprimir 38 variables en 5, las distancias entre países de diferentes categorías se volvieron ambiguas, provocando clasificaciones erróneas.
